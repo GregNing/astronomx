@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.13.3",
     "@react-spring/web": "^9.7.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -10,6 +11,7 @@
     "konva": "^9.3.15",
     "react": "^18.3.1",
     "react-2d-canvas": "^0.7.0",
+    "react-awesome-reveal": "^4.2.14",
     "react-dom": "^18.3.1",
     "react-konva": "^18.2.10",
     "react-scripts": "5.0.1",

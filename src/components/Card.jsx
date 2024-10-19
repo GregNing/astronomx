@@ -1,19 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useSprings, animated, to as interpolate, easings } from '@react-spring/web'
 import { Container, Deck } from '../styles'
-import DeckCard1 from './Deck/1'
-import DeckCard2 from './Deck/2'
-import DeckCard3 from './Deck/3'
-import DeckCard4 from './Deck/4'
 import { AnimatedCanvas } from './Deck/AnimatedDrawing'
 import { drawCloakedFigure, drawSymbols, drawPlanets, drawSpiral } from '../utils/common'
-
-const DeckComponet = {
-  0: DeckCard1,
-  1: DeckCard2,
-  2: DeckCard3,
-  3: DeckCard4,
-}
 
 const DeckFunc = {
   0: drawCloakedFigure,
@@ -30,22 +19,6 @@ const cards = [
   'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
   'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
 ]
-
-const DefaultCard = 'https://tarothall.com/static/core/images/tarotcard.png'
-// These two are just helpers, they curate spring data, values that are later being interpolated into css
-// These two are just helpers, they curate spring data, values that are later being interpolated into css
-// const to = (i) => {
-//   let params = {x: 0, y: i* -4 }
-
-//   console.log('i', i)
-//   return {
-//     x: 0,
-//     y: i * -4,
-//     scale: 1,
-//     rot: -10 + Math.random() * 20,
-//     delay: i * 100,
-//   }
-// }
 const to = (i) => ({
   x: 0,
   y: i * -4,
@@ -124,8 +97,6 @@ const Card = () => {
   }
   const colorFunc = (frame) => {
     if (selected & cardNumber == 99) return 'rgba(255, 255, 255, 0.8)'
-    console.log('frame', frame)
-
     const hue = (frame % 360) / 360;
     return `hsla(${hue * 360}, 100%, 50%, 0.8)`;
   }
